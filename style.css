@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.header {
+  background-color: #cc83f1;
+  height: 50px;
+  flex-shrink: 0;
+  stroke-width: 4px;
+  stroke: #000;
+}
