@@ -1,7 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  font-family: "Lexend", sans-serif;
 }
 
 .header {
@@ -10,4 +13,34 @@
   flex-shrink: 0;
   stroke-width: 4px;
   stroke: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header img {
+  width: 40px; /* Ajuste este valor conforme necessário */
+  height: auto; /* Mantém a proporção da imagem */
+}
+.header h1 {
+  margin: 0 10px; /* Optional: Add some spacing between the img and h1 */
+}
+
+.footer {
+  background-color: #cc83f1;
+  height: 80px; /* Corrigido o valor negativo */
+  flex-shrink: 0;
+  stroke-width: 4px;
+  stroke: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer img {
+  width: 25px; /* Ajuste este valor conforme necessário */
+  height: auto; /* Mantém a proporção da imagem */
 }
