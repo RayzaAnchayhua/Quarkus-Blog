@@ -24,6 +24,10 @@
   height: 25px;
 }
 
+.body {
+  padding: 10;
+}
+
 .sidebar {
   display: flex;
   flex-direction: column;
@@ -33,6 +37,17 @@
   width: 150px;
   height: 150px;
   border-radius: 100%;
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.social-medias {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  align-items: center;
+  gap: 1rem;
 }
 
 .social-midia {
@@ -40,8 +55,8 @@
   height: 40px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   border-radius: 100%;
+  margin: 5px;
 }
 
 .footer {
