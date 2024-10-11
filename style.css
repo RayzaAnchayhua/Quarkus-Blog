@@ -3,54 +3,60 @@
 * {
   margin: 0;
   padding: 0;
-  overflow: hidden;
   font-family: "Lexend", sans-serif;
 }
 
 .header {
   background-color: #cc83f1;
-  height: 50px;
+  height: 70px;
+  width: 100%;
   flex-shrink: 0;
-  stroke-width: 4px;
-  stroke: #000;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
-.header img {
-  width: 40px; /* Ajuste este valor conforme necessário */
-  height: auto; /* Mantém a proporção da imagem */
-}
 .header h1 {
-  margin: 0 10px; /* Optional: Add some spacing between the img and h1 */
+  margin: 0 7px; /* Optional: Add some spacing between the img and h1 */
+}
+
+.menu {
+  margin: 15px;
+  height: 25px;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
 }
 
 .profile {
   width: 150px;
   height: 150px;
+  border-radius: 100%;
 }
 
 .social-midia {
   width: 40px;
   height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 100%;
 }
 
 .footer {
   background-color: #cc83f1;
   height: 80px; /* Corrigido o valor negativo */
-  flex-shrink: 0;
-  stroke-width: 4px;
-  stroke: #000;
+  flex-shrink: 0; /*Ficar de olho tenho que usar com responsabilidade*/
   display: flex;
   align-items: center;
-  justify-content: center;
-  position: fixed;
-  bottom: 0;
+  position: fixed; /*se bottom = 0 obrigatoriamente tem posição fixa*/
+  bottom: 0; /*taca pra baixo*/
   width: 100%;
 }
 
 .footer img {
   width: 25px; /* Ajuste este valor conforme necessário */
   height: auto; /* Mantém a proporção da imagem */
+  margin: 15px;
 }
