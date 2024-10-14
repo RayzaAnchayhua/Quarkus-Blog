@@ -22,7 +22,7 @@
         </div>
             <div class="social-medias">
                     <img src="./assets/linkedin-icon.svg" alt="Linkedin Logo" class="social-midia">
-                    <img src="./assets/github-icon.svg" alt="Github Logo" class="social-midia">
+                    <img src="./assets/github-white-icon.svg" alt="Github Logo" class="social-midia">
                     <img src="./assets/insta-icon.svg" alt="Instagram Logo" class="social-midia">
             </div>
     </div>
@@ -30,20 +30,39 @@
         <h1>How Quarkus prepare reflective code to GraalVM</h1>
         <p>Minha paixão é cantar, gosto de compor musica e alegrar os demais ao me redor com minhas melodias. Comecei a programar recentemente e estou adorando e contribuindo com projetos para poder ajudar mais pessoas!
             Amo compartilhar meu conhecimento <3.</p>
-    </div>
+
+        <h2>Why Quarkus extension?</h2>
+        <p>Quarkus is both a framework and a build time <strong>augmentation</strong> toolkit. Its principal concept is "do as much as possible during build time instead of runtime", this concept is what helps Quarkus achieve a very low startup time and a smaller memory footprint.
+
+            Quarkus enables the creation of a Native Image through Graal VM, making it an excellent choice for Serverless systems that require minimal startup time and memory usage.
+            
+            Additionally, Quarkus is a framework that has been captivating developers with its development experience. In the growth of internal developer platforms that aim for a developer-friendly experience, the experience that Quarkus provides is something to be considered.
+        </p>
+        <br>Keeping in mind these initial concepts, let's try to answer some questions:</br>
+            <ul class="list-style-type">
+            <li>Some libraries perform actions at runtime (class path scanning, proxies, etc.) 
+                instead of build time. How can we adapt them to the Quarkus closed world?</li>
+            
+            <li>Quarkus leverages the Graal SDK to generate a native application. However, it's essential to note that Graal VM does need some tweaks, and all executable code needs to be known before running. How can I adjust the code to be used as correct input for GraalVM?</li>
+            
+            <li>Managing an Internal Developer Platform with over 100+ Quarkus applications in production, I need to implement a specific cross-cutting approach across all applications. What is the recommended method to achieve this?</li>
+            </ul>    
+        </p>
+            
+        </div>
 
 </main>
 
 <footer class="footer">
-        <div class="footer-content">
-            <img src="./assets/roq-icon.svg" alt="Quarkus Logo">
-            <p>@2024{$name}<br />
-            Made for <a href="https://github.com/RayzaAnchayhua" title="Visite meu Github!" target="_blank">RayzaAnchayhua</a></p>
-        </div>
-        <div class="social-midia-footer">
-            <img src="./assets/linkedin-icon.svg" alt="Linkedin Logo" class="social-midia">
-            <img src="./assets/github-icon.svg" alt="Github Logo" class="social-midia">
-            <img src="./assets/insta-icon.svg" alt="Instagram Logo" class="social-midia">
-        </div>    
+    <div class="footer-content">
+        <img src="./assets/roq-icon.svg" alt="Quarkus Logo">
+        <p>@2024{$name}<br />
+        Made for <a href="https://github.com/RayzaAnchayhua" title="Visite meu Github!" target="_blank">RayzaAnchayhua</a></p>
+    </div>
+    <div class="social-midia-footer">
+        <img src="./assets/linkedin-icon.svg" alt="Linkedin Logo" class="social-midia">
+        <img src="./assets/github-icon.svg" alt="Github Logo" class="social-midia">
+        <img src="./assets/insta-icon.svg" alt="Instagram Logo" class="social-midia">
+    </div>
 </footer>
 </html>
