@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   font-family: "Lexend", sans-serif;
+  overflow: auto;
 }
 
 .header {
@@ -24,13 +25,22 @@
   height: 25px;
 }
 
-.body {
-  padding: 10;
+.container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
 }
 
 .sidebar {
   display: flex;
   flex-direction: column;
+  width: 200px;
+  height: 100vh;
+}
+
+.text-sidebar {
+  margin: 10px;
+  text-align: center;
 }
 
 .profile {
@@ -38,7 +48,6 @@
   height: 150px;
   border-radius: 100%;
   margin-left: 20px;
-  margin-top: 20px;
   margin-bottom: 5px;
 }
 
@@ -59,19 +68,38 @@
   margin: 5px;
 }
 
+.body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-left: 20px;
+}
+
 .footer {
   background-color: #cc83f1;
   height: 80px; /* Corrigido o valor negativo */
   flex-shrink: 0; /*Ficar de olho tenho que usar com responsabilidade*/
   display: flex;
+  flex-direction: row;
   align-items: center;
   position: fixed; /*se bottom = 0 obrigatoriamente tem posição fixa*/
   bottom: 0; /*taca pra baixo*/
   width: 100%;
+  justify-between;
+}
+
+.footer-container {
+  display: flex;
 }
 
 .footer img {
   width: 25px; /* Ajuste este valor conforme necessário */
   height: auto; /* Mantém a proporção da imagem */
   margin: 15px;
+}
+
+.social-midia-footer {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
 }
