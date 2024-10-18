@@ -20,6 +20,17 @@
   margin: 0 7px; /* Optional: Add some spacing between the img and h1 */
 }
 
+.change_mode {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  justify-items: space-between;
+}
+
 .menu {
   margin: 15px;
   height: 25px;
@@ -95,7 +106,6 @@
 .footer {
   background-color: #cc83f1;
   height: 80px;
-  flex-shrink: 0;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -115,7 +125,7 @@
 }
 
 .footer img {
-  width: 25px;
+  width: 30px;
   height: auto;
   gap: 2rem;
 }
