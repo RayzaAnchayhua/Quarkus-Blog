@@ -20,6 +20,11 @@
   margin: 0 7px; /* Optional: Add some spacing between the img and h1 */
 }
 
+.material-symbols-outlined {
+  font-size: 48px !important;
+  padding-left: 1rem;
+}
+
 .change_mode {
   width: 60px;
   height: 60px;
@@ -92,6 +97,14 @@
   border-radius: 100%;
   align-items: center;
   margin: 5px;
+}
+
+.informations-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
 }
 
 .body {

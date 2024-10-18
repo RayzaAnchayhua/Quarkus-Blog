@@ -2,40 +2,69 @@
   margin: 0;
   padding: 0;
   font-family: "Lexend", sans-serif;
-  overflow: auto;
 }
 
 .header {
   background-color: #cc83f1;
   height: 70px;
   width: 100%;
-  flex-shrink: 0;
   display: flex;
   align-items: center;
+  position: fixed;
+  top: 0;
 }
 
 .header h1 {
   margin: 0 7px; /* Optional: Add some spacing between the img and h1 */
 }
 
-.menu {
-  margin: 15px;
-  height: 25px;
+.material-symbols-outlined {
+  font-size: 48px !important;
+  padding-left: 1rem;
+}
+
+.change_mode {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  justify-items: space-between;
 }
 
 .footer {
   background-color: #cc83f1;
-  height: 80px; /* Corrigido o valor negativo */
-  flex-shrink: 0; /*Ficar de olho tenho que usar com responsabilidade*/
+  height: 80px;
   display: flex;
+  flex-direction: row;
   align-items: center;
-  position: fixed; /*se bottom = 0 obrigatoriamente tem posição fixa*/
-  bottom: 0; /*taca pra baixo*/
+  bottom: 0;
   width: 100%;
+  justify-content: space-between;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  align-items: center;
+  gap: 1rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
 }
 
 .footer img {
-  width: 25px; /* Ajuste este valor conforme necessário */
-  height: auto; /* Mantém a proporção da imagem */
-  margin: 15px;
+  width: 30px;
+  height: auto;
+  gap: 2rem;
+}
+
+.social-midia-footer {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
 }
