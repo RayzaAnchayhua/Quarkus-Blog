@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Quarkus Blog</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="flavicon" type="image" href="./assets/flavicon-roq.svg">
-        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quarkus Blog</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="flavicon" type="image" href="./assets/flavicon-roq.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
 </head>
 
 <header class="header">
-    <span  class="material-symbols-outlined" alt="Hamburger Icon">menu</span>
+    <span class="material-symbols-outlined" alt="Hamburger Icon">menu</span>
     <h1>Welcome to Quarkus Blog!</h1>
     <div class="change_mode">
-    <img src="./assets/chage_mode.svg" alt="Change Mode Icon" class="change-mode">
-    <img src="./assets/moon_dark_mode.svg" alt="Moon Icon" class="moon">
-    <img src="./assets/sun_light_mode.svg" alt="Sun Icon" class="sun">
+        <img src="./assets/chage_mode.svg" alt="Change Mode Icon" class="change-mode">
+        <img src="./assets/moon_dark_mode.svg" alt="Moon Icon" class="moon">
+        <img src="./assets/sun_light_mode.svg" alt="Sun Icon" class="sun">
     </div>
 </header>
 <main class="container">
@@ -29,128 +30,160 @@
                 <p>Desenvolvedora Open Source nas horas vagas</p>
             </div>
         </div>
-            <div class="social-medias">
-                    <img src="./assets/linkedin-icon.svg" alt="Linkedin Logo" class="social-midia">
-                    <img src="./assets/github-white-icon.svg" alt="Github Logo" class="social-midia">
-                    <img src="./assets/insta-icon.svg" alt="Instagram Logo" class="social-midia">
-            </div>
-            <div class="informations-text">
+        <div class="social-medias">
+            <img src="./assets/linkedin-icon.svg" alt="Linkedin Logo" class="social-midia">
+            <img src="./assets/github-white-icon.svg" alt="Github Logo" class="social-midia">
+            <img src="./assets/insta-icon.svg" alt="Instagram Logo" class="social-midia">
+        </div>
+        <div class="informations-text">
+            <div class="calender">
                 <span class="material-symbols-outlined">
-                calendar_month
+                    calendar_month
                 </span>
                 <p>getdate</p>
+            </div>
+            <div class="schedule">
                 <span class="material-symbols-outlined">
-                schedule
+                    schedule
                 </span>
                 <p>time to read</p>
-            </div>   
-    </div>
-    <div class="body"> 
-        <h1>How Quarkus prepare reflective code to GraalVM</h1>
-        <p>Minha paixão é cantar, gosto de compor musica e alegrar os demais ao me redor com minhas melodias. 
-            Comecei a programar recentemente e estou adorando e contribuindo com projetos para poder ajudar mais pessoas!
-            Amo compartilhar meu conhecimento <3.
-        </p>
-
-        <h2>Why Quarkus extension?</h2>
-            <p>Quarkus is both a framework and a build time <strong>augmentation</strong> toolkit. 
-                Its principal concept is "do as much as possible during build time instead of runtime", this concept is what helps 
-                Quarkus achieve a very low startup time and a smaller memory footprint.
-
-                Quarkus enables the creation of a Native Image through Graal VM, making it an excellent choice for Serverless
-                systems that require minimal startup time and memory usage.
-                
-                Additionally, Quarkus is a framework that has been captivating developers with its development experience. 
-                In the growth of internal developer platforms that aim for a developer-friendly experience, the experience that Quarkus provides is something to be considered.
-            </p>
-        <br>Keeping in mind these initial concepts, let's try to answer some questions:</br>
-            <ul class="list-style-type">
-            <li>Some libraries perform actions at runtime (class path scanning, proxies, etc.) 
-                instead of build time. How can we adapt them to the Quarkus closed world?</li>
-            
-            <li>Quarkus leverages the Graal SDK to generate a native application. However, it's essential to note that Graal VM does need some tweaks, and 
-                all executable code needs to be known before running. How can I adjust the code to be used as correct input for GraalVM?</li>
-            
-            <li>Managing an Internal Developer Platform with over 100+ Quarkus applications in production, I need to implement a specific cross-cutting approach across 
-                all applications. What is the recommended method to achieve this?</li>
-            </ul>    
-
-        <h2> A real-world example </h2>
-            <p>Let's take the Flyway extension for Quarkus as an example. Flyway library finds JavaMigration implementors to execute migrations using those implementors using reflection.
-
-                To register the reflection for Flyway and to generate a native image without to worry about the reflection. The Quarkus Flyway extension does:
-
-                Uses CombinedIndexBuildItem (Jandex) to find all JavaMigration implementors.
-                Produce a BuildProducer<ReflectiveClassBuildItem> to produce a ReflectiveClassBuildItem containing all necessary JavaMigration implementors.
-                After all, Quarkus will consume each ReflectiveClassBuildItem into the class NativeImageReflectConfigStep.
-
-                And after, for each ReflectionInfo will mount the necessary JSON configuration file for Native Image Builder, using another producer called 
-                GeneratedResourceBuildItem into the file META-INF/native-image/reflect-config.json.
-            </p>
-        <h2> The Quarkus power!</h2>
-            <p>
-                As we can see, adding a configuration file works well. It is just a simple class utilizing reflection. 
-                However, when using frameworks like Hibernate or libraries that heavily rely on reflection, manual configuration becomes
-                necessary to ensure compatibility with Native Image generation. 
-                This involves creating Reflection Configuration Files to explicitly define the reflection usage and enable it within the Native Image, 
-                ensuring seamless integration with such libraries in native runtime environments. It is worth noting that this task can be quite challenging and time-consuming.
-            </p>
-        <h2>Scenario </h2>
-            <p>Imagine you have an order system, and every time an order is created or its status is changed, you need to notify another system to perform an action. 
-                This scenario is common when working with microservices. In the microservice world, each microservice needs to be cohesive, have low coupling, and be deployable independently. 
-                With these principles in mind, the only way to communicate with another microservice is through the network, which often leads to an increase in dual writes. 
-                Dual writes involve writing data into two different systems simultaneously. For example, writing into the database and also writing into ActiveMQ.
-                In the upcoming sections, we will see this in action and look at some common mistakes people make when trying to fix the dual writes issue.
-            </p>
-        <h2>Quarkus extension structure</h2>
-            <p>A Quarkus extension is divided in two modules, deployment and runtime.
-
-                The deployment module contains various components, such as build steps and build items, that play important roles in the application augmentation process.
-                
-                The runtime module contains runtime code that are used by deployment module at build time.
-                
-                It might seem odd: Why is runtime code executed and utilized by build-time code?
-                
-                The reason is that runtime code is designed to be recorded for execution later.
-                When you write this code, it's intended to be executed or used at a later stage.
-            </p>
-        <h2>[Feature #3] Counting the number of CRUD methods</h2>
-            <p>This feature helps us find and log methods annotated with @POST, @GET, @PUT, and @DELETE using Jandex. 
-                To log information at runtime, it's necessary to create a Recorder class within the runtime module.
-            </p>
-        <h3>Jandex</h3>
-            <p>Jandex is a powerful Java annotation indexer and library that allows developers 
-                to efficiently analyze and index Java classes. It's particularly useful for Quarkus to perform 
-                annotation-based processing during build time.
-            </p>
-        <h3>ConsoleRecorder</h3>
-            <p>
-                Quarkus offers two build items (ApplicationIndexBuildItem, CombinedIndexBuildItem) that enable us to obtain an index for 
-                accessing annotations, implementations, interfaces, and more. In the ApplicationIndexBuildItem we have all application 
-                classes and in the CombinedIndexBuildItem we have all the application classes and all relevant classes from dependencies, etc.
-            </p>
+            </div>
         </div>
+    </div>
+    <div class="body">
+        <h1>How Quarkus prepare reflective code to GraalVM</h1>
+        <p>Minha paixão é cantar, gosto de compor musica e alegrar os demais ao me redor com minhas melodias.
+            Comecei a programar recentemente e estou adorando e contribuindo com projetos para poder ajudar mais
+            pessoas!
+            Amo compartilhar meu conhecimento <3. </p>
+
+                <h2>Why Quarkus extension?</h2>
+                <p>Quarkus is both a framework and a build time <strong>augmentation</strong> toolkit.
+                    Its principal concept is "do as much as possible during build time instead of runtime", this concept
+                    is what helps
+                    Quarkus achieve a very low startup time and a smaller memory footprint.
+
+                    Quarkus enables the creation of a Native Image through Graal VM, making it an excellent choice for
+                    Serverless
+                    systems that require minimal startup time and memory usage.
+
+                    Additionally, Quarkus is a framework that has been captivating developers with its development
+                    experience.
+                    In the growth of internal developer platforms that aim for a developer-friendly experience, the
+                    experience that Quarkus provides is something to be considered.
+                </p>
+                <br>Keeping in mind these initial concepts, let's try to answer some questions:</br>
+                <ul class="list-style-type">
+                    <li>Some libraries perform actions at runtime (class path scanning, proxies, etc.)
+                        instead of build time. How can we adapt them to the Quarkus closed world?</li>
+
+                    <li>Quarkus leverages the Graal SDK to generate a native application. However, it's essential to
+                        note that Graal VM does need some tweaks, and
+                        all executable code needs to be known before running. How can I adjust the code to be used as
+                        correct input for GraalVM?</li>
+
+                    <li>Managing an Internal Developer Platform with over 100+ Quarkus applications in production, I
+                        need to implement a specific cross-cutting approach across
+                        all applications. What is the recommended method to achieve this?</li>
+                </ul>
+
+                <h2> A real-world example </h2>
+                <p>Let's take the Flyway extension for Quarkus as an example. Flyway library finds JavaMigration
+                    implementors to execute migrations using those implementors using reflection.
+
+                    To register the reflection for Flyway and to generate a native image without to worry about the
+                    reflection. The Quarkus Flyway extension does:
+
+                    Uses CombinedIndexBuildItem (Jandex) to find all JavaMigration implementors.
+                    Produce a BuildProducer<ReflectiveClassBuildItem> to produce a ReflectiveClassBuildItem containing
+                        all necessary JavaMigration implementors.
+                        After all, Quarkus will consume each ReflectiveClassBuildItem into the class
+                        NativeImageReflectConfigStep.
+
+                        And after, for each ReflectionInfo will mount the necessary JSON configuration file for Native
+                        Image Builder, using another producer called
+                        GeneratedResourceBuildItem into the file META-INF/native-image/reflect-config.json.
+                </p>
+                <h2> The Quarkus power!</h2>
+                <p>
+                    As we can see, adding a configuration file works well. It is just a simple class utilizing
+                    reflection.
+                    However, when using frameworks like Hibernate or libraries that heavily rely on reflection, manual
+                    configuration becomes
+                    necessary to ensure compatibility with Native Image generation.
+                    This involves creating Reflection Configuration Files to explicitly define the reflection usage and
+                    enable it within the Native Image,
+                    ensuring seamless integration with such libraries in native runtime environments. It is worth noting
+                    that this task can be quite challenging and time-consuming.
+                </p>
+                <h2>Scenario </h2>
+                <p>Imagine you have an order system, and every time an order is created or its status is changed, you
+                    need to notify another system to perform an action.
+                    This scenario is common when working with microservices. In the microservice world, each
+                    microservice needs to be cohesive, have low coupling, and be deployable independently.
+                    With these principles in mind, the only way to communicate with another microservice is through the
+                    network, which often leads to an increase in dual writes.
+                    Dual writes involve writing data into two different systems simultaneously. For example, writing
+                    into the database and also writing into ActiveMQ.
+                    In the upcoming sections, we will see this in action and look at some common mistakes people make
+                    when trying to fix the dual writes issue.
+                </p>
+                <h2>Quarkus extension structure</h2>
+                <p>A Quarkus extension is divided in two modules, deployment and runtime.
+
+                    The deployment module contains various components, such as build steps and build items, that play
+                    important roles in the application augmentation process.
+
+                    The runtime module contains runtime code that are used by deployment module at build time.
+
+                    It might seem odd: Why is runtime code executed and utilized by build-time code?
+
+                    The reason is that runtime code is designed to be recorded for execution later.
+                    When you write this code, it's intended to be executed or used at a later stage.
+                </p>
+                <h2>[Feature #3] Counting the number of CRUD methods</h2>
+                <p>This feature helps us find and log methods annotated with @POST, @GET, @PUT, and @DELETE using
+                    Jandex.
+                    To log information at runtime, it's necessary to create a Recorder class within the runtime module.
+                </p>
+                <h3>Jandex</h3>
+                <p>Jandex is a powerful Java annotation indexer and library that allows developers
+                    to efficiently analyze and index Java classes. It's particularly useful for Quarkus to perform
+                    annotation-based processing during build time.
+                </p>
+                <h3>ConsoleRecorder</h3>
+                <p>
+                    Quarkus offers two build items (ApplicationIndexBuildItem, CombinedIndexBuildItem) that enable us to
+                    obtain an index for
+                    accessing annotations, implementations, interfaces, and more. In the ApplicationIndexBuildItem we
+                    have all application
+                    classes and in the CombinedIndexBuildItem we have all the application classes and all relevant
+                    classes from dependencies, etc.
+                </p>
+    </div>
 
 </main>
 
 <footer class="footer">
     <div class="footer-content">
         <a href="https://pages.quarkiverse.io/quarkus-roq/" target="_blank">
-        <img src="./assets/roq-icon.svg" alt="Quarkus Logo">
+            <img src="./assets/roq-icon.svg" alt="Quarkus Logo">
         </a>
         <p>@2024{$name}<br />
-        Made for <a href="https://github.com/RayzaAnchayhua" title="Visite meu Github!" target="_blank">RayzaAnchayhua</a></p>
+            Made for <a href="https://github.com/RayzaAnchayhua" title="Visite meu Github!"
+                target="_blank">RayzaAnchayhua</a></p>
     </div>
     <div class="social-midia-footer">
         <a href="https://in.linkedin.com/in/quarkusio" target="_blank">
-        <img src="./assets/linkedin-icon.svg" alt="Linkedin Logo" class="social-midia">
+            <img src="./assets/linkedin-icon.svg" alt="Linkedin Logo" class="social-midia">
         </a>
         <a href="https://pages.quarkiverse.io/quarkus-roq/" target="_blank">
-        <img src="./assets/github-white-icon.svg" alt="Github Logo" class="social-midia">
-        </a >
+            <img src="./assets/github-white-icon.svg" alt="Github Logo" class="social-midia">
+        </a>
         <a href="https://www.instagram.com/rayzaluana_tech/" target="_blank">
-        <img src="./assets/insta-icon.svg" alt="Instagram Logo" class="social-midia">
+            <img src="./assets/insta-icon.svg" alt="Instagram Logo" class="social-midia">
         </a>
     </div>
 </footer>
+
 </html>

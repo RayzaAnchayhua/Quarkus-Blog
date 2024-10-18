@@ -8,7 +8,7 @@
 
 .header {
   background-color: #cc83f1;
-  height: 70px;
+  height: 85px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -44,13 +44,17 @@
 .container {
   display: flex;
   flex-direction: row;
-  margin-top: 6rem;
+  margin-top: 8.5rem;
+  margin-bottom: 4.5rem;
+  margin-left: 100px;
+  margin-right: 100px;
+  gap: 6rem;
 }
 
 .sidebar {
   display: flex;
   flex-direction: column;
-  width: 200px;
+  width: 25em;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -60,8 +64,10 @@
 }
 
 .text-sidebar {
+  display: flex;
+  flex-direction: column;
   text-align: center;
-  padding-top: 10px;
+  gap: 0.5rem;
 }
 
 .profile-picture {
@@ -69,6 +75,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
 }
 
 .profile {
@@ -101,7 +108,7 @@
 
 .informations-text {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   margin-top: 1rem;
@@ -111,9 +118,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-left: 40px;
-  margin-right: 40px;
-  height: 100vh;
+  height: 100%;
 }
 
 .footer {
