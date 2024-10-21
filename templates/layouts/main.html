@@ -7,7 +7,7 @@ layout: default
 
 <header class="header">
   <span class="material-symbols-outlined" alt="Hamburger Icon">menu</span>
-  <h1>Welcome to Quarkus Blog!</h1>
+  <h1>Welcome to Quarkus Blog!(Tem que ser var)</h1>
   </div>
 </header>
 <aside class="sidebar">
@@ -36,9 +36,15 @@ layout: default
 </div>
 <footer class="footer">
   <section class="contact">
-    <h3 class="contact-title">Contact us</h3>
-
-    <ul>
+    <div class="copyright">
+      {#if site.img}
+      <img class="page-image" src="{roq-icon.svg}" alt="{page.title}">  
+      <p>{global:now.format('Y')} &copy; {site.data.simple-name} <br><p></p>
+      Made for <a href="https://github.com/RayzaAnchayhua" title="Visite meu Github!" target="_blank">RayzaAnchayhua</a></p>
+    </div>
+  
+    <h3 class="contact-social-midias">Contact us</h3>
+    <<ul>
       {#if site.data.social-twitter??}
       <li><a href="https://twitter.com/{site.data.social-twitter}" target="_blank"><i class="fa-brands fa-twitter" aria-hidden="true"></i></a></li>
       {/if}
@@ -55,10 +61,7 @@ layout: default
       <li class="email"><a href="mailto:{site.data.social-email?}"><i class="fa fa-envelope-o"></i></a></li>
       {/if}
     </ul>
-
     
   </section> <!-- End Section Contact -->
-  <div class="copyright">
-    <p>{global:now.format('Y')} &copy; {site.data.simple-name}</p>
-  </div>
+    
 </footer> <!-- End Footer -->
