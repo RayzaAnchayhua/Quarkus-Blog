@@ -8,39 +8,56 @@ link: posts/:title
 <article class="article-page">
     <div class="page-content">
         {#if page.img}
-        <div class="page-cover-image">
-            <figure>
-                <img class="page-image" src="{page.img}" alt="{page.title}">
-                {#if page.data.figCaption??}
-                <figcaption>{page.data.figCaption}</figcaption>
-                {/if}
-            </figure>
-        </div> <!-- End Page Cover Image -->
-        {/if}
+
         <div class="wrap-content">
+            
+            <div class="profile-picture">
+                <a href="./about-me.html">
+                    <img src="./assets/exemple-profile.svg" alt="Profile Picture" class="profile">
+                </a>
+                <div class="text-sidebar">
+                    <h2>{cdi:authors.get(page.data.author).name}</h2>
+                    <p>Desenvolvedora Open Source nas horas vagas</p>
+                </div>
+            </div>
+            <div class="social-medias">
+                <div class="page-share">
+                    <a href="https://twitter.com/intent/tweet?text={page.title}&url={page.url.encoded}"
+                       title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
+                    <a href="https://facebook.com/sharer.php?u={page.url.encoded}" title="Share on Facebook"
+                       rel="nofollow" target="_blank">Facebook</a>
+                    <a href="https://plus.google.com/share?url={page.url.encoded}" title="Share on Google+"
+                       rel="nofollow" target="_blank">Google+</a>
+            </div>
+            <div class="informations-text">
+                <div class="calender">
+                    <span class="material-symbols-outlined">calendar_month</span>
+                    <p>{page.date.format('yyyy, MMM dd')}&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                </div>
+            </div>
+        </div>
+
+
             <header class="header-page">
                 <h1 class="page-title">{page.title}</h1>
                 <div class="page-date"><span>{page.date.format('yyyy, MMM dd')}&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
             </header>
             {#insert /}
-            <div class="page-footer">
-                <div class="footer-links">
-                    <div class="page-share">
-                        <a href="https://twitter.com/intent/tweet?text={page.title}&url={page.url.encoded}"
-                           title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
-                        <a href="https://facebook.com/sharer.php?u={page.url.encoded}" title="Share on Facebook"
-                           rel="nofollow" target="_blank">Facebook</a>
-                        <a href="https://plus.google.com/share?url={page.url.encoded}" title="Share on Google+"
-                           rel="nofollow" target="_blank">Google+</a>
-                    </div>
-                    <div class="page-tag">
-                        {#for tag in page.data.tags.asStrings}
-                        {#let tagSlug = tag.slugify}
-                        <a href="{site.url('/posts/tag', tagSlug)}" class="tag">&#35; {tagSlug}</a>
-                        {/for}
-                    </div>
 
-                </div>
+            <div class="page-cover-image">
+                <figure>
+                    <img class="page-image" src="{page.img}" alt="{page.title}">
+                    {#if page.data.figCaption??}
+                    <figcaption>{page.data.figCaption}</figcaption>
+                    {/if}
+                </figure>
+            </div> <!-- End Page Cover Image -->
+            {/if}
+
+         
+
+            <div class="page-footer">
+                
                 {#if cdi:authors.get(page.data.author)}
                 <div class="author">
                     <img src="{cdi:authors.get(page.data.author).img}" alt="author-{page.data.author}"/>
@@ -50,6 +67,18 @@ link: posts/:title
                     </div>
                 </div>
                 {/if}
+
+                <div class="footer-links">
+                    
+                    </div>
+                    <div class="page-tag">
+                        {#for tag in page.data.tags.asStrings}
+                        {#let tagSlug = tag.slugify}
+                        <a href="{site.url('/posts/tag', tagSlug)}" class="tag">&#35; {tagSlug}</a>
+                        {/for}
+                    </div>
+                </div>
+
             </div>
         </div> <!-- End Wrap Content -->
     </div> <!-- End Page Content -->

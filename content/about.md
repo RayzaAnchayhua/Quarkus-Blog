@@ -7,8 +7,7 @@ description: |
 layout: page
 ---
 
-# About Roq
-
+# Rayza
 Roq stands out in the Java development community as a powerful static site generator, bridging the gap between the
 likes of Gatsby, Hugo, and the broader backend community. While tools like Jekyll once filled this space, they’ve become outdated and cumbersome,
 especially with Ruby’s limitations.
