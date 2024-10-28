@@ -9,23 +9,27 @@ layout: main
 <div class="hero">
   {#insert /}
 </div>
-
 {#if site.collections.get('posts')}
-{#for post in site.collections.get('posts').paginated(page.paginator)}
-<article class="post">
-  {#if post.img}
-  <a class="post-thumbnail" style="background-image: url({post.img})" href="{post.url}"></a>
-  {/if}
-  <div class="post-content">
-    <h2 class="post-title"><a href="{post.url}">{post.title}</a></h2>
-    <p>{post.description}</p>
-    <span class="post-date">{post.date.format('yyyy, MMM dd')}&nbsp;&nbsp;&nbsp;—&nbsp;</span>
-    <span class="post-words">
-      {post.readTime} minute read
-    </span>
-  </div>
-</article>
-{/for}
+<div class="posts">
+  <h2 class="recents">Recent posts</h2>
+  {#for post in site.collections.get('posts').paginated(page.paginator)}
+  <article class="post">
+    {#if post.img}
+    <a class="post-thumbnail" style="background-image: url({post.img})" href="{post.url}"></a>
+    {/if}
+    <div class="post-content">
+      <h2 class="post-title"><a href="{post.url}">{post.title}</a></h2>
+      <p>{post.description}</p>
+      <div class="post-date">
+        <span class="post-date">{post.date.format('yyyy, MMM dd')}&nbsp;&nbsp;&nbsp;—&nbsp;</span>
+        <span class="post-words">
+          {post.readTime} minute read
+        </span>
+      </div>
+    </div>
+  </article>
+  {/for}
+</div>
 
 {#include partials/pagination.html/}
 {/if}

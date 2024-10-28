@@ -1,0 +1,49 @@
+$primary: #ffffff;
+$sidebar: #f5f5f5;
+$hover: #e0e0e0;
+$text: #111;
+$border: #333;
+
+.theme--light {
+    * {
+      color: $text;
+    }
+
+    .wrapper {
+        background: $primary;
+    }
+  
+    .sidebar {
+      background-color: $sidebar;
+      filter: drop-shadow(0 0 0.1rem $hover);
+      box-shadow: 1px 0px $hover;
+    }
+  
+    .cover-author-image {
+        img {
+          border: 2px solid $border;
+        }
+      }
+
+    .menu-line-bottom {
+      border-bottom: 2px solid $border;
+    }
+  
+    .menu-line {
+      border-bottom: 2px solid $border;
+    }
+  
+    .menu-title {
+      background-color: $sidebar;
+    }
+
+    .post {
+        background-color: $sidebar;
+        filter: drop-shadow(0.5rem 0.5rem 0.5rem $hover);
+    }
+
+    .post:hover {
+        background-color: $hover;
+    }
+}
+  

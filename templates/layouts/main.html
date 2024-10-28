@@ -6,8 +6,7 @@ layout: default
 
 <aside class="sidebar">
   <header>
-    <button class="change-mode" onclick="toggleTheme()">Switch to Dark Mode</button>
-
+    <button class="change-mode" onclick="toggleTheme()"></button>
     <div class="about">
       {#if site.img}
       <div class="cover-author-image">
@@ -48,11 +47,16 @@ layout: default
       </ul>
       <div class="menu-line-bottom"></div>
     </div>
+    <div class="credits">
+      <img src="../../static/assets/images/RayLuaTech.svg" alt="Rayza Luana Tech">
+      <img src="../../static/assets/images/Roq.svg" alt="ROQ">
+    </div>
   </header> <!-- End Header -->
   <footer>
     <section class="contact">
-      <h3 class="contact-title">Contact me</h3>
       <div class="copyright">
+        <p> <a href="https://github.com/RayzaAnchayhua">RayLua Tech Deisgn</a></p>
+        <p>Made with Quarkus ROQ</p>
         <p>{global:now.format('Y')} &copy; {site.data.simple-name}</p>
       </div>
     </section> <!-- End Section Contact -->

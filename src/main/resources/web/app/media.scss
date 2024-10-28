@@ -1,0 +1,380 @@
+@media screen and (max-height: 768px) {
+    .sidebar {
+      padding-top: 1rem;
+    }
+  
+    .about { 
+      padding: 0;
+    }
+  
+    .cover-author-image {
+      height: 8rem;
+      a img {
+        width: 8rem;
+        height: 8rem;
+      }
+    }
+  
+    .social-medias {
+      margin-top: 1rem;
+    }
+  
+    .description {
+      margin-top: 0;
+      font-weight: 300;
+    }
+  
+    .menu {
+      padding: 0rem;
+      margin-top: 0rem;
+    }
+  
+    ul {
+      margin-top: 0rem;
+    }
+    
+    ul,
+    li {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .sidebar {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      padding: 10px;
+      background-color: #fff;
+      box-shadow: 0 1px 1px #1f232e26;
+  }
+  
+    .content-box {
+        padding: 20px 10px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: stretch;
+    }
+  }
+  
+  @media only screen and (max-width: 1230px) {
+    .post {
+        width: 48%;
+        max-width: 100%;
+        margin: 0 .9% 1.5%;
+        flex-direction: column;
+    }
+  
+    .post a {
+      height: 20rem;
+      max-height: 30rem;
+      width: 100%;
+  }
+  
+    .post-thumbnail {
+      width: 100%;
+    }
+  }
+  
+  @media only screen and (max-width: 1048px) {
+    .post {
+        width: 98%;
+        max-width: 100%;
+        margin: 2%;
+        flex-direction: column;
+        height: 100%;
+    }
+  
+    .post a {
+      border-top-left-radius: 3rem;
+      border-top-right-radius: 3rem;
+      border-bottom-left-radius: 0rem;
+      border-bottom-right-radius: 0rem;
+      height: 100%;
+      width: 100%;
+    }
+  
+    .post-thumbnail {
+      width: 100%;
+    }
+  
+    .content-box {
+      padding: 10px;
+    }
+  
+    .page-cover-image .page-image {
+      margin-top: 2rem;
+    }
+  
+    .post-content {
+      width: 90%;
+      text-align: justify;
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+    }
+  
+    .sidebar {
+      width: 100%;
+      position: relative;
+    }
+  
+    .recents {
+      text-align: center;
+    }
+    
+    .cover-author-image img {
+      width: 150px; 
+      height: 150px;
+    }
+    
+    .author-name {
+      font-size: large;
+    }
+  
+    .menu-title {
+      font-size: large;
+    }
+  
+    i {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .content-box {
+      padding: 10px;
+    }
+  
+    .page-cover-image .page-image {
+      margin-top: 2rem;
+    }
+  
+    .post {
+        width: 98%;
+        max-width: 100%;
+        margin: 2%;
+        flex-direction: column;
+        height: 100%;
+    }
+  
+    .post-content {
+      width: 90%;
+      text-align: justify;
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+    }
+  
+    .post a {
+      border-top-left-radius: 3rem;
+      border-top-right-radius: 3rem;
+      border-bottom-left-radius: 0rem;
+      border-bottom-right-radius: 0rem;
+      height: 100%;
+      width: 100%;
+    }
+  
+    .sidebar {
+      width: 100%;
+      position: relative;
+    }
+  
+    .recents {
+      text-align: center;
+    }
+    
+    .cover-author-image img {
+      width: 150px; 
+      height: 150px;
+    }
+    
+    .author-name {
+      font-size: large;
+    }
+  
+    .menu-title {
+      font-size: large;
+    }
+  
+    i {
+      font-size: 1.5rem;
+    }
+  }
+  
+  .author-name {
+    font-size: x-large;
+    font-weight: 500;
+  }
+  
+  .description {
+    margin-top: 1rem;
+    font-weight: 300;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  
+  .menu-line {
+    width: 90%;
+    margin-bottom: -1.5rem;
+  }
+  
+  .menu-line-bottom {
+    width: 90%;
+    margin-top: 1.5rem;
+  }
+  
+  .menu-title {
+    font-size: x-large;
+    font-weight: 400;
+    padding: 0.5rem;
+  }
+  
+  li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+  }
+  
+  li a {
+    gap: 1rem;
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+  
+  i {
+    font-size: 2rem;
+  }
+  
+  .cover-author-image img {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .credits img {
+    width: 7rem;
+    height: 7rem;
+  }
+  
+  .recents {
+    font-size: xx-large;
+    font-weight: 400;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .posts {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .post {
+    width: 96%;
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    transition: all .3s ease;
+    gap: 2rem;
+    justify-content: start;
+    border-radius: 3rem;
+    cursor: pointer;
+  }
+  
+  .article-page {
+    width: 100%;
+  }
+  
+  .page-cover-image .page-image {
+    width: 100%;
+    height: 20rem;
+    border-radius: 3rem;
+    margin-bottom: 2rem;
+  }
+  
+  pre {
+      padding: 1rem 2rem;
+      overflow: auto;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      word-break: break-all;
+  }
+  
+  pre code.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 1em;
+  }
+  
+  .post-content {
+    padding: 1rem;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .post-title {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: start;
+  }
+  
+  .post-description {
+    text-align: justify;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  
+  .post-date {
+    margin-top: 2rem;
+  }
+  
+  .post a {
+    height: 20rem;
+  }
+  
+  .post-thumbnail {
+    width: 30%;
+    min-height: 11rem;
+    background-size: cover;
+    background-position: 50% 50%;
+  }
+  
+  .contact {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contact-title {
+    font-size: large;
+    font-weight: 400;
+  }
+  
+  .copyright {
+    font-size: small;
+    font-weight: 300;
+  }

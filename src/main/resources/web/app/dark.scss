@@ -1,0 +1,47 @@
+$primary: #333;
+$sidebar: #464646;
+$hover: #565656;
+$text: #eee;
+$border: #fff;
+
+.theme--dark {
+    * {
+      color: $text;
+    }
+
+    .wrapper {
+        background: $primary;
+    }
+  
+    .sidebar {
+      background-color: $sidebar;
+      filter: drop-shadow(0 0 0.1rem $hover);
+    }
+
+    .cover-author-image {
+        img {
+            border: 2px solid $border;
+        }
+    }
+
+    .menu-line {
+      border-bottom: 2px solid $border;
+    }
+  
+    .menu-line-bottom {
+      border-bottom: 2px solid $border;
+    }
+  
+    .menu-title {
+      background-color: $sidebar;
+    }
+
+    .post {
+        background-color: $sidebar;
+        filter: drop-shadow(0.2rem 0.2rem 0.2rem $hover);
+    }
+
+    .post:hover {
+        background-color: $hover;
+    }
+}
