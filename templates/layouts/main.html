@@ -64,30 +64,75 @@ layout: default
 </aside> <!-- End Sidebar -->
 <div class="content-box clearfix">
   {#insert /}
+
+  <div id="giscus-container">
+    <script src="https://giscus.app/client.js"
+      data-repo="rayzaanchayhua/quarkus-blog"
+      data-repo-id="R_kgDOM84sYg"
+      data-category="General"
+      data-category-id="DIC_kwDOM84sYs4CjxXR"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="bottom"
+      data-theme="light"
+      data-lang="pt"
+      data-loading="lazy"
+      crossorigin="anonymous"
+      async
+      id="giscus-widget">
+    </script>
+  </div>
 </div>
 
 <script>
-    function applySavedTheme() {
-      const savedTheme = localStorage.getItem('theme') || 'theme--light';
-      document.body.className = savedTheme;
-      updateButtonIcon(savedTheme);
-    }
+  function applySavedTheme() {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.body.className = savedTheme;
+    updateButtonIcon(savedTheme);
+    updateGiscusTheme(savedTheme);
+  }
 
-    function toggleTheme() {
-      const currentTheme = document.body.classList.contains('theme--light') ? 'theme--light' : 'theme--dark';
-      const newTheme = currentTheme === 'theme--light' ? 'theme--dark' : 'theme--light';
-      
-      document.body.className = newTheme;
-      localStorage.setItem('theme', newTheme);
-      updateButtonIcon(newTheme);
-    }
+  function toggleTheme() {
+    const currentTheme = document.body.classList.contains('light') ? 'light' : 'dark';
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    document.body.className = newTheme;
+    localStorage.setItem('theme', newTheme);
+    updateButtonIcon(newTheme);
+    updateGiscusTheme(newTheme);
+  }
 
-    function updateButtonIcon(theme) {
-      const button = document.getElementsByClassName('change-mode')[0];
-      button.innerHTML = theme === 'theme--dark' 
-        ? '<i class="fa-solid fa-sun"></i>' 
-        : '<i class="fa-solid fa-moon"></i>';
-    }
+  function updateButtonIcon(theme) {
+    const button = document.getElementsByClassName('change-mode')[0];
+    button.innerHTML = theme === 'dark' 
+      ? '<i class="fa-solid fa-sun"></i>' 
+      : '<i class="fa-solid fa-moon"></i>';
+  }
 
-    applySavedTheme();
+  function updateGiscusTheme(theme) {
+    const giscusContainer = document.getElementById('giscus-container');
+    giscusContainer.innerHTML = "";
+
+    const newGiscus = document.createElement('script');
+    newGiscus.src = "https://giscus.app/client.js";
+    newGiscus.setAttribute('data-repo', "rayzaanchayhua/quarkus-blog");
+    newGiscus.setAttribute('data-repo-id', "R_kgDOM84sYg");
+    newGiscus.setAttribute('data-category', "General");
+    newGiscus.setAttribute('data-category-id', "DIC_kwDOM84sYs4CjxXR");
+    newGiscus.setAttribute('data-mapping', "pathname");
+    newGiscus.setAttribute('data-strict', "0");
+    newGiscus.setAttribute('data-reactions-enabled', "1");
+    newGiscus.setAttribute('data-emit-metadata', "0");
+    newGiscus.setAttribute('data-input-position', "bottom");
+    newGiscus.setAttribute('data-theme', theme);
+    newGiscus.setAttribute('data-lang', "pt");
+    newGiscus.setAttribute('data-loading', "lazy");
+    newGiscus.setAttribute('crossorigin', "anonymous");
+    newGiscus.async = true;
+
+    giscusContainer.appendChild(newGiscus);
+  }
+
+  applySavedTheme();
 </script>
