@@ -2,9 +2,17 @@
     .sidebar {
       padding-top: 1rem;
     }
+
+    .posts {
+      width: 100% !important;
+    }
   
     .about { 
       padding: 0;
+    }
+
+    .credits {
+      padding-top: 0rem;
     }
   
     .cover-author-image {
@@ -12,6 +20,32 @@
       a img {
         width: 8rem;
         height: 8rem;
+      }
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      max-width: 100%;
+    }
+
+    .page-tag, .page-share {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 100%;
+      gap: 0.5rem !important;
+      text-align: center !important;
+
+      a {
+        width: 25%;
+        font-size: x-small;
+        padding-top: 1rem;
+        gap: 1rem;
       }
     }
   
@@ -25,186 +59,144 @@
     }
   
     .menu {
-      padding: 0rem;
+      padding-top: 2rem !important;
       margin-top: 0rem;
-    }
-  
-    ul {
-      margin-top: 0rem;
+      padding-bottom: 2rem;
     }
     
     ul,
     li {
+      margin-top: 0rem;
       list-style: none;
       display: flex;
+      justify-content: start;
+      align-items: start;
       flex-direction: column;
-      gap: 2rem;
+      gap: 1rem;
     }
-  }
-  
-  @media only screen and (max-width: 768px) {
-    .sidebar {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 100%;
-      padding: 10px;
-      background-color: #fff;
-      box-shadow: 0 1px 1px #1f232e26;
-  }
-  
-    .content-box {
-        padding: 20px 10px;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: stretch;
-    }
-  }
-  
-  @media only screen and (max-width: 1230px) {
+
     .post {
-        width: 48%;
-        max-width: 100%;
-        margin: 0 .9% 1.5%;
-        flex-direction: column;
+      width: 98% !important;
     }
-  
-    .post a {
-      height: 20rem;
-      max-height: 30rem;
-      width: 100%;
-  }
-  
-    .post-thumbnail {
-      width: 100%;
-    }
-  }
-  
-  @media only screen and (max-width: 1048px) {
-    .post {
-        width: 98%;
-        max-width: 100%;
-        margin: 2%;
-        flex-direction: column;
-        height: 100%;
-    }
-  
-    .post a {
-      border-top-left-radius: 3rem;
-      border-top-right-radius: 3rem;
-      border-bottom-left-radius: 0rem;
-      border-bottom-right-radius: 0rem;
-      height: 100%;
-      width: 100%;
-    }
-  
-    .post-thumbnail {
-      width: 100%;
-    }
-  
-    .content-box {
-      padding: 10px;
-    }
-  
-    .page-cover-image .page-image {
-      margin-top: 2rem;
-    }
-  
+
     .post-content {
-      width: 90%;
-      text-align: justify;
       display: flex;
       flex-direction: column;
-      margin: 0;
+      justify-content: center;
+      align-items: center;
+      width: 80%;
     }
-  
-    .sidebar {
+
+    .post-date span {
+      font-size: 0.8rem !important;
       width: 100%;
-      position: relative;
     }
+
+    .fa-calendar-days, .fa-glasses {
+      font-size: 0.8rem;
+    }
+}
   
-    .recents {
-      text-align: center;
-    }
-    
-    .cover-author-image img {
-      width: 150px; 
-      height: 150px;
-    }
-    
-    .author-name {
-      font-size: large;
-    }
-  
-    .menu-title {
-      font-size: large;
-    }
-  
-    i {
-      font-size: 1.5rem;
+@media only screen and (max-width: 768px) {
+  .sidebar {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 1px 1px #1f232e26;
+}
+
+  .content-box {
+      padding: 20px 10px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: stretch;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .page-tag, .page-share {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 0.5rem !important;
+    text-align: center !important;
+
+    a {
+      width: 25%;
+      font-size: x-small;
+      padding-top: 1rem;
+      gap: 1rem;
     }
   }
+
+  .post {
+    width: 96% !important;
+  }
+
+  .post-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+  }
+
+  .post-date span {
+    font-size: 0.8rem !important;
+    width: 100%;
+  }
+
+  .fa-calendar-days, .fa-glasses {
+    font-size: 0.8rem;
+  }
+}
   
-  @media (max-width: 480px) {
-    .content-box {
-      padding: 10px;
-    }
-  
-    .page-cover-image .page-image {
-      margin-top: 2rem;
-    }
-  
-    .post {
-        width: 98%;
-        max-width: 100%;
-        margin: 2%;
-        flex-direction: column;
-        height: 100%;
-    }
-  
-    .post-content {
-      width: 90%;
-      text-align: justify;
-      display: flex;
+@media only screen and (max-width: 1230px) {
+  .post {
+      width: 48%;
+      max-width: 100%;
+      margin: 0 .9% 1.5%;
       flex-direction: column;
-      margin: 0;
-    }
+  }
+
+  .post a {
+    height: 20rem;
+    max-height: 30rem;
+    width: 100%;
+  }
+
+  .post-thumbnail {
+    width: 100%;
+  }
+
+  .post-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+  }
+}
   
-    .post a {
-      border-top-left-radius: 3rem;
-      border-top-right-radius: 3rem;
-      border-bottom-left-radius: 0rem;
-      border-bottom-right-radius: 0rem;
+@media only screen and (max-width: 1048px) {
+  .post {
+      width: 98%;
+      max-width: 100%;
+      margin: 2%;
+      flex-direction: column;
       height: 100%;
-      width: 100%;
-    }
-  
-    .sidebar {
-      width: 100%;
-      position: relative;
-    }
-  
-    .recents {
-      text-align: center;
-    }
-    
-    .cover-author-image img {
-      width: 150px; 
-      height: 150px;
-    }
-    
-    .author-name {
-      font-size: large;
-    }
-  
-    .menu-title {
-      font-size: large;
-    }
-  
-    i {
-      font-size: 1.5rem;
-    }
   }
-  
+}

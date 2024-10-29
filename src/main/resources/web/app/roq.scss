@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
 
+$white: #ffffff;
+$transparent: #ffffff00;
+
 * {
   margin: 0;
   padding: 0;
@@ -86,7 +89,7 @@ footer {
 }
 
 .content-box {
-  padding: 50px 40px 20px 400px;
+  padding: 50px 100px 20px 440px;
   gap: 1rem;
   display: flex;
   flex-direction: row;
@@ -119,13 +122,37 @@ footer {
 .change-mode {
   position: absolute;
   right: 0;
-  background: #ffffff00;
+  background: $transparent;
   text-align: end;
   margin-right: 1rem;
   padding: 0.5rem;
   border-radius: 5px;
   cursor: pointer;
   border: none;
+}
+
+.page-tag, .page-share {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+  width: 50%;
+  margin-bottom: 0rem;
+
+  a {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.fa-calendar-days, .fa-glasses {
+  font-size: 1.2rem;
+}
+
+.wrap-content, footer-links {
+  max-width: 100%;
 }
 
 .sidebar {
@@ -139,7 +166,6 @@ footer {
   width: 20rem;
   height: 100%;
   padding: 20px 10px;
-  background-color: #fff;
   overflow-y: auto;
 }
 
@@ -151,11 +177,12 @@ footer {
   padding-top: 1rem;
   padding-bottom: 1rem;
   gap: 0.5rem;
-  img {
-    max-width: 4rem; /* Changed to max-width */
-    max-height: 4rem; /* Changed to max-height */
-  }
 }
+
+#giscus-container {
+  width: 100%;
+}
+
 
 .author-name {
   font-size: x-large;
@@ -220,8 +247,179 @@ i {
 }
 
 .credits img {
-  width: 7rem;
-  height: 7rem;
+  max-width: 20rem;
+  max-height: 5rem;
+}
+
+.recents {
+  font-size: xx-large;
+  font-weight: 400;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.post {
+  width: 96%;
+  max-width: 100%;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  transition: all .3s ease;
+  gap: 2rem;
+  justify-content: start;
+  border-radius: 3rem;
+  cursor: pointer;
+}
+
+.article-page {
+  width: 100%;
+}
+
+.page-cover-image .page-image {
+  width: 100%;
+  height: 20rem;
+  border-radius: 3rem;
+  margin-bottom: 2rem;
+}
+
+pre {
+    padding: 1rem 2rem;
+    overflow: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+}
+
+.post-content {
+  padding: 1rem;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-title {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: start;
+}
+
+.post-description {
+  text-align: justify;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.post-date {
+  margin-top: 2rem;
+}
+
+.post a {
+  height: 20rem;
+}
+
+.post-thumbnail {
+  width: 30%;
+  min-height: 11rem;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.page-image {
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.contact {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-title {
+  font-size: large;
+  font-weight: 400;
+}
+
+.copyright {
+  font-size: small;
+  font-weight: 300;
+}
+.author-name {
+  font-size: x-large;
+  font-weight: 500;
+}
+
+.description {
+  margin-top: 1rem;
+  font-weight: 300;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.menu-line {
+  width: 90%;
+  margin-bottom: -1.5rem;
+}
+
+.menu-line-bottom {
+  width: 90%;
+  margin-top: 1.5rem;
+}
+
+.menu-title {
+  font-size: x-large;
+  font-weight: 400;
+  padding: 0.5rem;
+}
+
+li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+}
+
+li a {
+  gap: 1rem;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+i {
+  font-size: 2rem;
+}
+
+.cover-author-image img {
+  width: 150px;
+  height: 150px;
 }
 
 .recents {
@@ -244,7 +442,7 @@ i {
   display: flex;
   align-items: center;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all .3s ease;
   gap: 2rem;
   justify-content: start;
   border-radius: 3rem;
@@ -263,11 +461,11 @@ i {
 }
 
 pre {
-  padding: 1rem 2rem;
-  overflow: auto;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  word-break: break-all;
+    padding: 1rem 2rem;
+    overflow: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: break-all;
 }
 
 pre code.hljs {
@@ -326,8 +524,4 @@ pre code.hljs {
 .copyright {
   font-size: small;
   font-weight: 300;
-}
-
-#giscus-container {
-  width: 100%;
 }

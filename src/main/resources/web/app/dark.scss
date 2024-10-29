@@ -9,6 +9,26 @@ $border: #fff;
     color: $text;
   }
 
+  .credits img {
+    color: $text;
+    filter: brightness(0) invert(1);
+  }
+
+  .page-share a {
+    background-color: $primary !important;
+    color: $text !important;
+    border: 1px solid $text !important;
+  }
+
+  .page-tag a {
+    color: $text !important;
+    border: 1px solid $text !important;
+  }
+
+  .page-cover-image figure {
+    background: $primary;
+  }
+
   .wrapper {
     background: $primary;
   }
@@ -43,5 +63,9 @@ $border: #fff;
 
   .post:hover {
     background-color: $hover;
+  }
+
+  .gsc-reactions-count, gsc-comments-count {
+    color: $text !important;
   }
 }

@@ -48,8 +48,8 @@ layout: default
       <div class="menu-line-bottom"></div>
     </div>
     <div class="credits">
-      <img src="../../static/assets/images/RayLuaTech.svg" alt="Rayza Luana Tech">
-      <img src="../../static/assets/images/Roq.svg" alt="ROQ">
+      <img src="../../static/assets/images/raylua.svg" alt="Rayza Luana Tech">
+      <img src="../../static/assets/images/roq.svg" alt="ROQ">
     </div>
   </header> <!-- End Header -->
   <footer>
@@ -65,7 +65,7 @@ layout: default
 <div class="content-box clearfix">
   {#insert /}
 
-  <div id="giscus-container">
+  <div id="giscus-container" style="display: none;">
     <script src="https://giscus.app/client.js"
       data-repo="rayzaanchayhua/quarkus-blog"
       data-repo-id="R_kgDOM84sYg"
@@ -134,5 +134,13 @@ layout: default
     giscusContainer.appendChild(newGiscus);
   }
 
+  function showGiscusIfPost() {
+    const giscusContainer = document.getElementById('giscus-container');
+    if (window.location.pathname.includes('/posts')) {
+      giscusContainer.style.display = 'block';
+    }
+  }
+
   applySavedTheme();
+  showGiscusIfPost();
 </script>
