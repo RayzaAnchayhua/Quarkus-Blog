@@ -1,16 +1,15 @@
 ---
 layout: main
-link: posts/:title
 ---
 
 {@io.quarkiverse.roq.frontmatter.runtime.model.DocumentPage page}
 
 <article class="article-page">
     <div class="page-content">
-        {#if page.img}
+        {#if page.image}
         <div class="page-cover-image">
             <figure>
-                <img class="page-image" src="{page.img}" alt="{page.title}">
+                <img class="page-image" src="{page.image}" alt="{page.title}">
                 {#if page.data.figCaption??}
                 <figcaption>{page.data.figCaption}</figcaption>
                 {/if}
@@ -43,7 +42,7 @@ link: posts/:title
                 </div>
                 {#if cdi:authors.get(page.data.author)}
                 <div class="author">
-                    <img src="{cdi:authors.get(page.data.author).img}" alt="author-{page.data.author}"/>
+                    <img src="{cdi:authors.get(page.data.author).avatar}" alt="author-{page.data.author}"/>
                     <div class="author-data">
                         <a target="_blank" href="{cdi:authors.get(page.data.author).url}" class="author-name">{cdi:authors.get(page.data.author).name}</a>
                         <span class="author-job-title">{cdi:authors.get(page.data.author).job_title}</span>
