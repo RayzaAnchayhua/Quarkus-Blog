@@ -1,0 +1,28 @@
+---
+layout: roq-default/default
+---
+
+{@io.quarkiverse.roq.frontmatter.runtime.model.Site site}
+
+<aside class="sidebar">
+  {#insert header}
+  <header>
+    <button class="change-mode" onclick="toggleTheme()"></button>
+    {#insert about}{#include partials/roq-default/sidebar-about /}{/}
+    {#insert social-media}{#include partials/roq-default/sidebar-social-media /}{/}
+    {#insert menu}{#include partials/roq-default/sidebar-menu /}{/}
+    {#insert credit}{#include partials/roq-default/sidebar-credit /}{/}
+  </header>
+  {/}
+  {#insert header}
+  <footer>
+
+  </footer>
+  {/}
+</aside>
+
+<div class="content-box clearfix">
+  {#insert /}
+
+
+</div>
