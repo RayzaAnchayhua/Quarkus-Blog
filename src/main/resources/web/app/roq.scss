@@ -83,13 +83,14 @@ footer {
 .page-content {
   display: flex;
   justify-self: center;
-  align-items: center;
   flex-direction: column;
   flex-grow: 1;
+  gap: 3rem;
+  padding-top: 3rem;
 }
 
 .content-box {
-  padding: 50px 100px 20px 440px;
+  padding: 0px 25px 20px 440px;
   gap: 1rem;
   display: flex;
   flex-direction: row;
@@ -131,7 +132,8 @@ footer {
   border: none;
 }
 
-.page-tag, .page-share {
+.page-tag,
+.page-share {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -147,11 +149,13 @@ footer {
   }
 }
 
-.fa-calendar-days, .fa-glasses {
+.fa-calendar-days,
+.fa-glasses {
   font-size: 1.2rem;
 }
 
-.wrap-content, footer-links {
+.wrap-content,
+footer-links {
   max-width: 100%;
 }
 
@@ -182,7 +186,6 @@ footer {
 #giscus-container {
   width: 100%;
 }
-
 
 .author-name {
   font-size: x-large;
@@ -272,7 +275,7 @@ i {
   display: flex;
   align-items: center;
   overflow: hidden;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   gap: 2rem;
   justify-content: start;
   border-radius: 3rem;
@@ -291,11 +294,11 @@ i {
 }
 
 pre {
-    padding: 1rem 2rem;
-    overflow: auto;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    word-break: break-all;
+  padding: 1rem 2rem;
+  overflow: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-all;
 }
 
 pre code.hljs {
@@ -425,7 +428,6 @@ i {
 .recents {
   font-size: xx-large;
   font-weight: 400;
-  margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
@@ -442,7 +444,7 @@ i {
   display: flex;
   align-items: center;
   overflow: hidden;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   gap: 2rem;
   justify-content: start;
   border-radius: 3rem;
@@ -461,11 +463,11 @@ i {
 }
 
 pre {
-    padding: 1rem 2rem;
-    overflow: auto;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    word-break: break-all;
+  padding: 1rem 2rem;
+  overflow: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-all;
 }
 
 pre code.hljs {
@@ -524,6 +526,10 @@ pre code.hljs {
 .copyright {
   font-size: small;
   font-weight: 300;
+}
+
+.pagination-container {
+  display: flex;
 }
 
 @import "dark";

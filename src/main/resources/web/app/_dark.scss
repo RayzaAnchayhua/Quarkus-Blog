@@ -1,4 +1,4 @@
-$primary: #1E1E20;
+$primary: #1e1e20;
 $sidebar: #464646;
 $hover: #565656;
 $text: #c4c4c4;
@@ -11,7 +11,7 @@ $border: #fff;
 
   .credits img {
     color: $text;
-    filter: brightness(0) invert(1);
+    filter: brightness(0) invert(0.85);
   }
 
   .page-share a {
@@ -65,7 +65,8 @@ $border: #fff;
     background-color: $hover;
   }
 
-  .gsc-reactions-count, gsc-comments-count {
+  .gsc-reactions-count,
+  gsc-comments-count {
     color: $text !important;
   }
 }
